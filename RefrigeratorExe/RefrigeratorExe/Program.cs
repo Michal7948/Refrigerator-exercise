@@ -320,7 +320,7 @@ namespace RefrigeratorExe
         {
             if (refrigerators.Count() == 0)
             {
-                Console.WriteLine("The refrigerator is empty!");
+                Console.WriteLine("No refrigerators!");
             }
             else
             {
@@ -334,7 +334,7 @@ namespace RefrigeratorExe
             }
         }
         #endregion
-
+        //I created the sorting functions of the shelfs and the items here so that it also goes through the list of refrigerators
         #region Sort shelfs
         public static void SortShelfs(List<Refrigerator> refrigerators)
         {
