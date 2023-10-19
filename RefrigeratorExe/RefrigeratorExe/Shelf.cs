@@ -8,7 +8,7 @@ namespace RefrigeratorExe
 {
     internal class Shelf
     {
-        public const double SHELF_SPACE= 200;
+        public const double SHELF_SPACE= 100;
         public static int UniqueId = 1;
         public int Id { get; }
         public int FloorNumber { get; set; }
