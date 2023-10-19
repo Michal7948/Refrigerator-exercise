@@ -23,6 +23,7 @@ namespace RefrigeratorExe
             Items = new List<Item>();
         }
 
+        #region ToString shelf
         public string ToString()
         {
             return $"\tShelf:\n\tId:{Id}\n\tFloor number:{FloorNumber}\n\tFree space:{FreeSpace} samar\n\tItems:\n{ReturnItems()}\n";
@@ -37,7 +38,8 @@ namespace RefrigeratorExe
             }
             return items;
         }
+        #endregion
 
-        
+
     }
 }

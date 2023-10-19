@@ -25,7 +25,7 @@ namespace RefrigeratorExe
         }
 
 
-        #region ToString
+        #region ToString refrigerator
         public string ToString()
         {
             return $"Refrigerator:\nId:{Id}\nModel:{Model}\nColor:{Color}\nNumber shelfs:{NumberShelfs}\nShelfs:\n{ReturnShelfs()}\n";
@@ -54,7 +54,7 @@ namespace RefrigeratorExe
             {
                 freePlace += shelf.FreeSpace;
             }
-            return freePlace += (NumberShelfs - Shelfs.Count()) * Shelf.SHELF_SPACE;
+            return freePlace += ((NumberShelfs - Shelfs.Count()) * Shelf.SHELF_SPACE);
         }
         #endregion
 
@@ -257,22 +257,5 @@ namespace RefrigeratorExe
         }
         #endregion
 
-        #region Print only items
-        public void PrintItem()
-        {
-            if (Shelfs.Count() == 0)
-            {
-                Console.WriteLine("The refrigerator is empty!");
-            }
-            foreach (Shelf shelf in Shelfs)
-            {
-                foreach (Item item in shelf.Items)
-                {
-                    Console.WriteLine(item.ToString());
-                }
-            }
-        }
-
-        #endregion
     }
 }

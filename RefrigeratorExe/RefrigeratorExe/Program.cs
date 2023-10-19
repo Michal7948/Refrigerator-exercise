@@ -21,10 +21,8 @@ namespace RefrigeratorExe
                     case 2:
                         {
                             double space = refrigerator1.FreePlaceRefrigerator();
-                            if (space != 0)
-                            {
-                                Console.WriteLine($"{space} Samar free space in the refrigerator");
-                            }
+                            Console.WriteLine($"{space} Samar free space in the refrigerator");
+
                             break;
                         }
                     case 3:
@@ -328,6 +326,7 @@ namespace RefrigeratorExe
             {
                 Console.WriteLine("Sort refrigerators:");
                 refrigerators.Sort((refrigerator1, refrigerator2) => refrigerator1.FreePlaceRefrigerator().CompareTo(refrigerator2.FreePlaceRefrigerator()));
+                refrigerators.Reverse();
                 foreach (Refrigerator refrigerator in refrigerators)
                 {
                     Console.WriteLine(refrigerator.ToString());
@@ -350,7 +349,7 @@ namespace RefrigeratorExe
                 int numberShelfEmpty = 0;
                 foreach (Refrigerator refrigerator in refrigerators)
                 {
-                    numberShelfEmpty +=(refrigerator.NumberShelfs - refrigerator.Shelfs.Count());
+                    numberShelfEmpty += (refrigerator.NumberShelfs - refrigerator.Shelfs.Count());
                     foreach (Shelf shelf in refrigerator.Shelfs)
                     {
                         shelfsSort.Add(shelf);
@@ -358,7 +357,9 @@ namespace RefrigeratorExe
                 }
                 Console.WriteLine("Sort shelfs:");
                 shelfsSort.Sort((shelf1, shelf2) => shelf1.FreeSpace.CompareTo(shelf2.FreeSpace));
+                shelfsSort.Reverse();
                 //I asked if I could write a number of empty shelfs instead of details of empty shelfs and I was told that I could because I add a shelf to the list of shelfs by item                if (numberShelfEmpty > 0)
+                if (numberShelfEmpty > 0)
                 {
                     Console.WriteLine($"There are {numberShelfEmpty} empty shelfs!!");
                 }
@@ -401,14 +402,10 @@ namespace RefrigeratorExe
         }
         #endregion
 
-
-
-
-
         static void Main(string[] args)
         {
             List<Refrigerator> refrigerators = new List<Refrigerator>();
-            Refrigerator refrigerator1 = new Refrigerator("Sharp", "gray",3);
+            Refrigerator refrigerator1 = new Refrigerator("Sharp", "gray", 2);
             refrigerators.Add(refrigerator1);
             Console.WriteLine("Hello User!");
             Menu(refrigerator1, refrigerators);

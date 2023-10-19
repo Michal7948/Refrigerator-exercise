@@ -39,9 +39,12 @@ namespace RefrigeratorExe
             TakeSpace = takeSpace;
         }
 
+        #region ToString item
         public string ToString()
         {
             return $"\t\tItem:\n\t\tId:{Id}\n\t\tName:{Name}\n\t\tNumber shelf:{NumberShelf}\n\t\tType:{Type}\n\t\tKosher:{Kosher}\n\t\tExpiry Date:{ExpiryDate}\n\t\tTake space:{TakeSpace} samar\n\n";
         }
+        #endregion
+
     }
 }
