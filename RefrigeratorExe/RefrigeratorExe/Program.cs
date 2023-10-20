@@ -341,7 +341,7 @@ namespace RefrigeratorExe
 
             if (refrigerators.Count() == 0)
             {
-                Console.WriteLine("The refrigerator is empty!");
+                Console.WriteLine("No refrigerators!");
             }
             else
             {
@@ -374,10 +374,8 @@ namespace RefrigeratorExe
         #region Sort items
         public static void SortItems(List<Refrigerator> refrigerators)
         {
-            if (refrigerators.First().Shelfs.Count() == 0 && refrigerators.Count() > 0)
-            {
-                Console.WriteLine("The refrigerator is empty!");
-            }
+            if (refrigerators.Count() > 0) Console.WriteLine("No refrigerators!");
+            else if (refrigerators.First().Shelfs.Count() == 0) Console.WriteLine("The refrigerator is empty!");
             else
             {
                 List<Item> itemsSort = new List<Item>();
